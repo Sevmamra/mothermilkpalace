@@ -1,105 +1,67 @@
-[
-  {
-    "category": "Loose Dairy Products",
-    "items": [
-      {
-        "name": "Full Cream Milk",
-        "price": 60,
-        "unit": "per litre",
-        "image": "assets/images/milk.jpg"
-      },
-      {
-        "name": "Paneer",
-        "price": 90,
-        "unit": "per 250g",
-        "image": "assets/images/paneer.jpg"
-      },
-      {
-        "name": "Shrikhand - Mango",
-        "price": 45,
-        "unit": "per 100g",
-        "image": "assets/images/shrikhand_mango.jpg"
-      },
-      {
-        "name": "Shrikhand - Elaichi",
-        "price": 45,
-        "unit": "per 100g",
-        "image": "assets/images/shrikhand_elaichi.jpg"
-      },
-      {
-        "name": "Milk Cake (Halwa)",
-        "price": 55,
-        "unit": "per 100g",
-        "image": "assets/images/milkcake.jpg"
-      }
-    ]
-  },
-  {
-    "category": "Ice Creams",
-    "items": [
-      {
-        "name": "Amul Vanilla Ice Cream",
-        "price": 30,
-        "unit": "per cup",
-        "image": "assets/images/amul_vanilla.jpg"
-      },
-      {
-        "name": "Amul Butterscotch",
-        "price": 35,
-        "unit": "per cup",
-        "image": "assets/images/amul_butterscotch.jpg"
-      }
-    ]
-  },
-  {
-    "category": "Namkeen & Chips",
-    "items": [
-      {
-        "name": "Lays Classic Salted",
-        "price": 10,
-        "unit": "small pack",
-        "image": "assets/images/lays_salted.jpg"
-      },
-      {
-        "name": "Kurkure Masala Munch",
-        "price": 10,
-        "unit": "small pack",
-        "image": "assets/images/kurkure_masala.jpg"
-      }
-    ]
-  },
-  {
-    "category": "Cold Drinks",
-    "items": [
-      {
-        "name": "Pepsi 250ml",
-        "price": 20,
-        "unit": "250ml",
-        "image": "assets/images/pepsi_250ml.jpg"
-      },
-      {
-        "name": "7UP 500ml",
-        "price": 35,
-        "unit": "500ml",
-        "image": "assets/images/7up_500ml.jpg"
-      }
-    ]
-  },
-  {
-    "category": "Biscuits",
-    "items": [
-      {
-        "name": "Parle-G",
-        "price": 10,
-        "unit": "small pack",
-        "image": "assets/images/parle_g.jpg"
-      },
-      {
-        "name": "Hide & Seek",
-        "price": 20,
-        "unit": "small pack",
-        "image": "assets/images/hide_seek.jpg"
-      }
-    ]
-  }
-]
+{
+  "loose_products": [
+    {
+      "category": "Milk & Dairy",
+      "items": [
+        { "name": "Buffalo Milk", "price": 60, "unit": "per litre", "image": "buffalo-milk.jpg" },
+        { "name": "Cow Milk", "price": 55, "unit": "per litre", "image": "cow-milk.jpg" },
+        { "name": "Paneer", "price": 320, "unit": "per kg", "image": "paneer.jpg" },
+        { "name": "Ghee", "price": 550, "unit": "per litre", "image": "ghee.jpg" },
+        { "name": "White Butter", "price": 480, "unit": "per kg", "image": "white-butter.jpg" },
+        { "name": "Chaach", "price": 20, "unit": "per glass", "image": "chaach.jpg" },
+        { "name": "Dahi", "price": 80, "unit": "per kg", "image": "dahi.jpg" }
+      ]
+    },
+    {
+      "category": "Shrikhand & Halwa",
+      "items": [
+        { "name": "Shrikhand (Kesar)", "price": 220, "unit": "per kg", "image": "shrikhand-kesar.jpg" },
+        { "name": "Shrikhand (Elaichi)", "price": 210, "unit": "per kg", "image": "shrikhand-elaichi.jpg" },
+        { "name": "Milk Cake", "price": 280, "unit": "per kg", "image": "milk-cake.jpg" },
+        { "name": "White Halwa (No Sugar)", "price": 300, "unit": "per kg", "image": "white-halwa.jpg" }
+      ]
+    }
+  ],
+  "packed_products": [
+    {
+      "category": "Amul",
+      "items": [
+        { "name": "Amul Milk 1L", "price": 66, "image": "amul-milk.jpg" },
+        { "name": "Amul Butter 100g", "price": 55, "image": "amul-butter.jpg" },
+        { "name": "Amul Cheese 200g", "price": 130, "image": "amul-cheese.jpg" },
+        { "name": "Amul Lassi", "price": 25, "image": "amul-lassi.jpg" },
+        { "name": "Amul Ice Cream Cup", "price": 20, "image": "amul-icecream.jpg" }
+      ]
+    },
+    {
+      "category": "Cadbury",
+      "items": [
+        { "name": "Dairy Milk Small", "price": 10, "image": "cadbury-dm.jpg" },
+        { "name": "Silk", "price": 80, "image": "cadbury-silk.jpg" }
+      ]
+    },
+    {
+      "category": "Cold Drinks",
+      "items": [
+        { "name": "Pepsi 500ml", "price": 35, "image": "pepsi.jpg" },
+        { "name": "Mountain Dew 250ml", "price": 20, "image": "dew.jpg" }
+      ]
+    },
+    {
+      "category": "Chips & Namkeen",
+      "items": [
+        { "name": "Lays Magic Masala", "price": 10, "image": "lays.jpg" },
+        { "name": "Balaji Wafers", "price": 5, "image": "balaji.jpg" },
+        { "name": "Kurkure", "price": 10, "image": "kurkure.jpg" }
+      ]
+    },
+    {
+      "category": "Biscuits & Maggi",
+      "items": [
+        { "name": "Parle-G", "price": 5, "image": "parle-g.jpg" },
+        { "name": "Hide & Seek", "price": 20, "image": "hide-seek.jpg" },
+        { "name": "Maggi 2-Minute", "price": 15, "image": "maggi.jpg" }
+      ]
+    }
+  ]
+}
