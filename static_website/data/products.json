@@ -1,0 +1,105 @@
+[
+  {
+    "category": "Loose Dairy Products",
+    "items": [
+      {
+        "name": "Full Cream Milk",
+        "price": 60,
+        "unit": "per litre",
+        "image": "assets/images/milk.jpg"
+      },
+      {
+        "name": "Paneer",
+        "price": 90,
+        "unit": "per 250g",
+        "image": "assets/images/paneer.jpg"
+      },
+      {
+        "name": "Shrikhand - Mango",
+        "price": 45,
+        "unit": "per 100g",
+        "image": "assets/images/shrikhand_mango.jpg"
+      },
+      {
+        "name": "Shrikhand - Elaichi",
+        "price": 45,
+        "unit": "per 100g",
+        "image": "assets/images/shrikhand_elaichi.jpg"
+      },
+      {
+        "name": "Milk Cake (Halwa)",
+        "price": 55,
+        "unit": "per 100g",
+        "image": "assets/images/milkcake.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Ice Creams",
+    "items": [
+      {
+        "name": "Amul Vanilla Ice Cream",
+        "price": 30,
+        "unit": "per cup",
+        "image": "assets/images/amul_vanilla.jpg"
+      },
+      {
+        "name": "Amul Butterscotch",
+        "price": 35,
+        "unit": "per cup",
+        "image": "assets/images/amul_butterscotch.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Namkeen & Chips",
+    "items": [
+      {
+        "name": "Lays Classic Salted",
+        "price": 10,
+        "unit": "small pack",
+        "image": "assets/images/lays_salted.jpg"
+      },
+      {
+        "name": "Kurkure Masala Munch",
+        "price": 10,
+        "unit": "small pack",
+        "image": "assets/images/kurkure_masala.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Cold Drinks",
+    "items": [
+      {
+        "name": "Pepsi 250ml",
+        "price": 20,
+        "unit": "250ml",
+        "image": "assets/images/pepsi_250ml.jpg"
+      },
+      {
+        "name": "7UP 500ml",
+        "price": 35,
+        "unit": "500ml",
+        "image": "assets/images/7up_500ml.jpg"
+      }
+    ]
+  },
+  {
+    "category": "Biscuits",
+    "items": [
+      {
+        "name": "Parle-G",
+        "price": 10,
+        "unit": "small pack",
+        "image": "assets/images/parle_g.jpg"
+      },
+      {
+        "name": "Hide & Seek",
+        "price": 20,
+        "unit": "small pack",
+        "image": "assets/images/hide_seek.jpg"
+      }
+    ]
+  }
+]
