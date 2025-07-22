@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout | Mother Milk Palace</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/checkout.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">🍼 Mother Milk Palace</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart</a>
+    </nav>
+  </header>
+
+  <main class="checkout-container">
+    <h1 style="text-align:center; margin: 1rem 0;">📦 Checkout</h1>
+
+    <form id="checkout-form" class="checkout-form">
+      <label for="name">Your Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" required />
+
+      <label for="address">Delivery Address:</label>
+      <textarea id="address" rows="3" required></textarea>
+
+      <button type="submit" class="btn">✅ Confirm Order (Cash on Delivery)</button>
+    </form>
+
+    <div id="order-success" style="display:none; text-align:center; margin-top: 2rem;">
+      <h2>🎉 Order Placed Successfully!</h2>
+      <p>We'll deliver your items within 5–10 minutes 🚴‍♂️</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mother Milk Palace</p>
+  </footer>
+</body>
+</html>
