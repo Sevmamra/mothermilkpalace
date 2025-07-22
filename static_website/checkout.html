@@ -2,50 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Checkout | Mother Milk Palace</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/check-login.js"></script>
-  <script defer src="assets/js/checkout.js"></script>
 </head>
 <body>
+
   <header>
-    <div class="logo">🍼 Mother Milk Palace</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cart.html">Cart</a>
-    </nav>
+    <h1>🧾 Order Summary</h1>
+    <a href="cart.html">← Back to Cart</a>
   </header>
 
   <main>
-    <h2 style="text-align: center;">🧾 Order Summary</h2>
-    <section id="cart-summary" class="cart-section">
-      <!-- Items will be shown by JS -->
-    </section>
+    <div id="cart-summary" class="checkout-summary">
+      <!-- JS will show items here -->
+    </div>
 
-    <h2 style="text-align: center;">📋 Enter Delivery Details</h2>
     <form id="checkout-form" class="checkout-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" required />
+      <h2>📦 Delivery Details</h2>
+      
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your name" required />
 
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" required />
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="10-digit number" required pattern="[0-9]{10}" />
 
-      <label for="address">Delivery Address:</label>
-      <textarea id="address" rows="3" required></textarea>
+      <label for="address">Delivery Address</label>
+      <textarea id="address" rows="3" placeholder="Full address" required></textarea>
 
-      <button type="submit" class="btn">🚚 Place Order</button>
+      <button type="submit" class="checkout-btn">Place Order</button>
     </form>
 
-    <div id="order-success" style="display:none; text-align:center; margin-top:2rem;">
-      <h3>🎉 Your Order has been placed!</h3>
-      <p>We will deliver in 5–10 minutes. Thank you!</p>
-      <a href="index.html" class="btn">Go to Home</a>
+    <div id="order-success" class="order-success" style="display: none;">
+      <h2>✅ Order Placed Successfully!</h2>
+      <p>Thank you for ordering from Mother Milk Palace.</p>
+      <a href="index.html">Back to Home</a>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Mother Milk Palace</p>
+    <p>© 2025 Mother Milk Palace</p>
   </footer>
+
+  <script src="assets/js/checkout.js"></script>
 </body>
 </html>
