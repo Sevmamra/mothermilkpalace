@@ -1,40 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cartData = JSON.parse(localStorage.getItem("cart")) || [];
-  const cartSummary = document.getElementById("cart-summary");
-  const checkoutForm = document.getElementById("checkout-form");
-  const orderSuccess = document.getElementById("order-success");
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const summaryContainer = document.getElementById("cart-summary");
+  const form = document.getElementById("checkout-form");
+  const successBox = document.getElementById("order-success");
 
-  if (cartData.length === 0) {
-    cartSummary.innerHTML = "<p>Your cart is empty.</p>";
-    checkoutForm.style.display = "none";
+  if (cart.length === 0) {
+    summaryContainer.innerHTML = "<p>Your cart is empty.</p>";
+    form.style.display = "none";
     return;
   }
 
   let total = 0;
-
-  // Show cart items
-  cartData.forEach(item => {
-    const itemDiv = document.createElement("div");
-    itemDiv.className = "cart-item";
+  const list = document.createElement("ul");
+  cart.forEach(item => {
+    const li = document.createElement("li");
     const subtotal = item.price * item.quantity;
     total += subtotal;
-
-    itemDiv.innerHTML = `
-      <strong>${item.name}</strong> (${item.quantity})<br/>
-      ₹${item.price} × ${item.quantity} = ₹${subtotal.toFixed(2)}
-      <hr/>
-    `;
-    cartSummary.appendChild(itemDiv);
+    li.textContent = `${item.name} - ₹${item.price} × ${item.quantity} = ₹${subtotal.toFixed(2)}`;
+    list.appendChild(li);
   });
 
-  // Show total
-  const totalDiv = document.createElement("div");
-  totalDiv.className = "cart-total";
-  totalDiv.innerHTML = `<h3>Total: ₹${total.toFixed(2)}</h3>`;
-  cartSummary.appendChild(totalDiv);
+  const totalLine = document.createElement("p");
+  totalLine.innerHTML = `<strong>Total: ₹${total.toFixed(2)}</strong>`;
 
-  // Form submit
-  checkoutForm.addEventListener("submit", (e) => {
+  summaryContainer.appendChild(list);
+  summaryContainer.appendChild(totalLine);
+
+  form.addEventListener("submit", e => {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -42,18 +34,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const address = document.getElementById("address").value.trim();
 
     if (!name || !phone || !address) {
-      alert("Please fill in all fields.");
+      alert("Please fill all the fields.");
       return;
     }
 
-    // You can send order data to Firebase/DB here in future
+    // ✅ Save to Firebase or backend here (future)
+    // Placeholder order object:
+    const order = {
+      name,
+      phone,
+      address,
+      items: cart,
+      total: total.toFixed(2),
+      timestamp: new Date().toISOString()
+    };
 
-    // Show success message
-    orderSuccess.style.display = "block";
-    checkoutForm.style.display = "none";
-    cartSummary.innerHTML = "";
+    console.log("Order placed:", order); // 🔁 Replace with API/firebase
 
-    // Clear cart from storage
+    // 🧹 Clear cart
     localStorage.removeItem("cart");
+
+    // 👍 Show success
+    form.style.display = "none";
+    summaryContainer.style.display = "none";
+    successBox.style.display = "block";
+
+    // 🔔 Future: Notify admin / delivery boy
   });
 });
