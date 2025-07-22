@@ -1,8 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("checkout-form");
-  const successBox = document.getElementById("order-success");
+  const cartData = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartSummary = document.getElementById("cart-summary");
+  const checkoutForm = document.getElementById("checkout-form");
+  const orderSuccess = document.getElementById("order-success");
 
-  form.addEventListener("submit", function (e) {
+  if (cartData.length === 0) {
+    cartSummary.innerHTML = "<p>Your cart is empty.</p>";
+    checkoutForm.style.display = "none";
+    return;
+  }
+
+  let total = 0;
+
+  // Show cart items
+  cartData.forEach(item => {
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "cart-item";
+    const subtotal = item.price * item.quantity;
+    total += subtotal;
+
+    itemDiv.innerHTML = `
+      <strong>${item.name}</strong> (${item.quantity})<br/>
+      ₹${item.price} × ${item.quantity} = ₹${subtotal.toFixed(2)}
+      <hr/>
+    `;
+    cartSummary.appendChild(itemDiv);
+  });
+
+  // Show total
+  const totalDiv = document.createElement("div");
+  totalDiv.className = "cart-total";
+  totalDiv.innerHTML = `<h3>Total: ₹${total.toFixed(2)}</h3>`;
+  cartSummary.appendChild(totalDiv);
+
+  // Form submit
+  checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -14,29 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Optional: Validate phone number format (basic)
-    if (!/^\d{10}$/.test(phone)) {
-      alert("Enter a valid 10-digit phone number.");
-      return;
-    }
+    // You can send order data to Firebase/DB here in future
 
-    // Order summary log (can be sent to backend in future)
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    console.log("Order placed by:", name);
-    console.log("Phone:", phone);
-    console.log("Address:", address);
-    console.log("Ordered Items:", cart);
+    // Show success message
+    orderSuccess.style.display = "block";
+    checkoutForm.style.display = "none";
+    cartSummary.innerHTML = "";
 
-    // Clear cart
+    // Clear cart from storage
     localStorage.removeItem("cart");
-
-    // Hide form, show success
-    form.style.display = "none";
-    successBox.style.display = "block";
-
-    // Optional: Redirect after delay
-    // setTimeout(() => {
-    //   window.location.href = "index.html";
-    // }, 4000);
   });
 });
