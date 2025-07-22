@@ -2,48 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login | Mother Milk Palace</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="assets/css/style.css">
-  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
-  <script defer src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
-  <script defer src="assets/js/firebase-init.js"></script>
-  <script defer src="assets/js/login.js"></script>
 </head>
 <body>
+
   <header>
-    <div class="logo">🍼 Mother Milk Palace</div>
-    <nav>
-      <a href="index.html">Home</a>
-    </nav>
+    <h1>🔐 Login to Order</h1>
   </header>
 
-  <main style="padding: 2rem; max-width: 400px; margin: auto;">
-    <h2 style="text-align:center;">📲 Login with Phone</h2>
-
+  <main>
     <form id="login-form" class="checkout-form">
-      <label for="phone">Enter Phone Number:</label>
-      <input type="tel" id="phone" placeholder="+91XXXXXXXXXX" required />
+      <label for="username">Full Name</label>
+      <input type="text" id="username" placeholder="Your name" required />
 
-      <div id="recaptcha-container"></div>
+      <label for="userphone">Phone Number</label>
+      <input type="tel" id="userphone" placeholder="10-digit number" required pattern="[0-9]{10}" />
 
-      <button type="submit" class="btn">Send OTP</button>
+      <button type="submit" class="checkout-btn">Login</button>
     </form>
-
-    <div id="otp-box" style="display:none;">
-      <label for="otp">Enter OTP:</label>
-      <input type="text" id="otp" required />
-      <button id="verify-btn" class="btn">✅ Verify OTP</button>
-    </div>
-
-    <div id="login-success" style="display:none; text-align:center; margin-top: 1rem;">
-      <h3>🎉 Logged in Successfully!</h3>
-      <p>Redirecting to home...</p>
-    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Mother Milk Palace</p>
+    <p>© 2025 Mother Milk Palace</p>
   </footer>
+
+  <script src="assets/js/auth.js"></script>
 </body>
 </html>
